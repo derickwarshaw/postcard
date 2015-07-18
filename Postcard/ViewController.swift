@@ -10,6 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var enterNameTextField: UITextField!
     @IBOutlet weak var enterMessageTextField: UITextField!
@@ -36,6 +37,20 @@ class ViewController: UIViewController {
         // set message label color equal to an instance of UIColor
         messageLabel.textColor = UIColor.redColor()
         
+        // unhide name label
+        nameLabel.hidden = false
+        
+        // set the label equal to the name text field
+        nameLabel.text = enterNameTextField.text
+        
+        // set the text color to blue
+        nameLabel.textColor = UIColor.blueColor()
+        
+        // reset text
+        enterNameTextField.text = ""
+        
+        // reset close keyboard
+        enterNameTextField.resignFirstResponder()
         // clear the message field
         enterMessageTextField.text = ""
         
